@@ -1,0 +1,31 @@
+{
+  "skill_name": "wangzai-quiz-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "创建一个娱乐测评：测一测你在古代丝路商队最适合担任什么角色。默认生成完整前端 JSON，不要创建网页。",
+      "expected_output": "一份包含 18 道题、10 个结果与 6 个能力维度的有效 JSON 文件。它应提供丝路历史背景来源、平衡的商队情境题、非高风险娱乐免责声明和可执行的画像匹配数据。",
+      "files": [],
+      "expectations": [
+        "输出是可解析的单个 JSON 文件，具有 meta、dimensions、normalization、questions、results 和 references。",
+        "JSON 有 18 道四选一题、10 个结果与 6 个能力维度，且结果画像覆盖全部维度。",
+        "references 至少有 3 个带 URL 和 usedFor 的来源。",
+        "normalization.maxRawScore 与实际题目分数上限一致。",
+        "结果与免责声明明确为娱乐用途，未将结果包装成真实职业建议。"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "创建一个娱乐测评：测一测你在宋代茶馆会成为哪种主理人。默认生成完整前端 JSON，不要创建网页。",
+      "expected_output": "一份包含 18 道题、10 个结果与 6 个能力维度的有效 JSON 文件。题目围绕宋代茶文化、待客与经营情境，包含来源、计分、归一化与结果匹配逻辑。",
+      "files": [],
+      "expectations": [
+        "输出是可解析的单个 JSON 文件，具有 meta、dimensions、normalization、questions、results 和 references。",
+        "题目为低风险娱乐情境，每题恰好 4 个选项，每个选项对 2-3 个已定义维度给出 0-5 整数分。",
+        "references 至少有 3 个带 URL 和 usedFor 的来源。",
+        "每个结果具有完整 targetProfile、优势、风险、建议与娱乐性说明。",
+        "校验脚本可以通过，且不含医疗、心理诊断或现实职业筛选结论。"
+      ]
+    }
+  ]
+}
